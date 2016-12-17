@@ -1,0 +1,17 @@
+Bookmarklets:
+
+  Tools:
+  
+  Retarget Windows:
+    javascript:(function() {
+    pageURL = document.URL;
+    links = document.getElementsByTagName("a");
+    for (i=0;i<links.length;i++) {
+      if (links[i].href.slice(-1) != '#') {
+        links[i].target = "blah";
+      } else if (links[i].href != pageURL &&
+            links[i].href.slice(0,-1) != pageURL) {
+        links[i].target = "blah";
+      }
+    };
+    })();
